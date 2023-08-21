@@ -64,6 +64,49 @@ ALTER TABLE professores
 ```
 
 
+### Cadastre pelo menos 5 cursos: 
+
+1. Front-End, carga horária 40h
+2. Back-End, carga horária 80h
+3. UX/UI Design, carga horária 30h
+4. Figma, carga horária 10h
+5. Redes de Computadores, carga horária 100h
+
+
+<!-- Incluir No Tabela cursos TITULO e Carga Horaria-->
+
+```sql
+INSERT INTO cursos (
+         titulo, carga_horaria) 
+    VALUES (
+        'Front-End',        
+        40                  
+    ), -- linha 1
+
+    (
+        'Back-End',        
+        80                  
+    ), -- linha 2
+
+    (
+        'UX/UI Design',        
+        30                  
+    ), -- linha 3
+
+    (
+        'Figma',        
+        10                 
+    ), -- linha 4
+
+     (
+        'Redes de Computadores',        
+        100                 
+    ); -- linha 5
+
+```
+
+
+
 
 
 
