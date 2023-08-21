@@ -22,7 +22,7 @@ CREATE TABLE cursos(
 CREATE TABLE professores(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
-    area_de_atuacao ENUM('design', 'desenvolvimento', ' infra')  NOT NULL,   
+    area_de_atuacao ENUM('design', 'desenvolvimento', 'infra')  NOT NULL,   
     curso_id TINYINT NOT NULL  
 ); 
 ```
@@ -77,7 +77,7 @@ ALTER TABLE professores
 
 ```sql
 INSERT INTO cursos (
-         titulo, carga_horaria, ) 
+         titulo, carga_horaria ) 
     VALUES (
         'Front-End',        
         40
