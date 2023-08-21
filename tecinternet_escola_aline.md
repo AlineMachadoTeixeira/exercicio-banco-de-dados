@@ -1,3 +1,4 @@
+# Exercícios de Banco de Dados - Etapa 1
 
 ![](tecinternet_escola_etapa_um.png)
 
@@ -62,6 +63,7 @@ ALTER TABLE professores
     FOREIGN KEY (curso_id) REFERENCES cursos(id);
 ```
 
+# Exercícios de Banco de Dados - Etapa 2
 
 ### Cadastre pelo menos 5 cursos: 
 
@@ -144,6 +146,27 @@ INSERT INTO alunos (
     ('Rúbeo Hagrid', '1950-03-30', 4.00, 6.00 , 5 ); -- linha 10 -  Redes de Computadores
 
 ```
+
+
+# Exercícios de Banco de Dados - Etapa 3
+
+### 1) Faça uma consulta que mostre os alunos que nasceram antes do ano 2009
+
+```sql
+SELECT  nome, data_de_nascimento FROM alunos WHERE data_de_nascimento < '2009-12-31';
+```
+![](etapa3-exercicicio1.PNG)
+
+
+### 2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
+
+```sql 
+SELECT nome AS 'ALunos',ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média das Notas" FROM alunos; 
+```
+![](etapa3-exercicicio2.PNG)
+
+
+
 
 
 
