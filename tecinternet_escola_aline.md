@@ -11,8 +11,8 @@ CREATE DATABASE tecinternet_escola_aline CHARACTER SET utf8mb4;
 ```sql
 CREATE TABLE cursos(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(30) NOT NULL
-    carga_horaria  TINYINT 
+    titulo VARCHAR(30) NOT NULL,
+    carga_horaria TINYINT,
     professor_id TINYINT NULL 
 ); 
 ```
@@ -21,8 +21,8 @@ CREATE TABLE cursos(
 ```sql
 CREATE TABLE professores(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL
-    area_de_atuacao ENUM('design', 'desenvolvimento', ' infra')  NOT NULL   
+    nome VARCHAR(50) NOT NULL,
+    area_de_atuacao ENUM('design', 'desenvolvimento', ' infra')  NOT NULL,   
     curso_id TINYINT NOT NULL  
 ); 
 ```
@@ -31,10 +31,10 @@ CREATE TABLE professores(
 ```sql
 CREATE TABLE alunos(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50)
-    data_de_nascimento DATE NOT NULL
-    primeira_nota DECIMAL(4,2) NOT NULL
-    segunda_nota DECIMAL(4,2) NOT NULL
+    nome VARCHAR(50),
+    data_de_nascimento DATE NOT NULL,
+    primeira_nota DECIMAL(4,2) NOT NULL,
+    segunda_nota DECIMAL(4,2) NOT NULL,
     curso_id TINYINT NULL
 ); 
 ```
@@ -53,7 +53,7 @@ ALTER TABLE alunos
 ALTER TABLE cursos
     
     ADD CONSTRAINT fk_cursos_professores1 
-    FOREIGN KEY (professore_id) REFERENCES professores(id);
+    FOREIGN KEY (professor_id) REFERENCES professores(id);
 ```
 
 ```sql
