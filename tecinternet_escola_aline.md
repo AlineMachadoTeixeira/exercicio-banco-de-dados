@@ -66,96 +66,90 @@ ALTER TABLE professores
 
 ### Cadastre pelo menos 5 cursos: 
 
-1. Front-End, carga horária 40h
-2. Back-End, carga horária 80h
-3. UX/UI Design, carga horária 30h
-4. Figma, carga horária 10h
-5. Redes de Computadores, carga horária 100h
-
-
 <!-- Incluir No Tabela cursos TITULO e Carga Horaria-->
 
 ```sql
 INSERT INTO cursos (
          titulo, carga_horaria ) 
-    VALUES (
-        'Front-End',        
-        40
-                        
-    ), -- linha 1
+    VALUES 
+    ('Front-End', 40 ), -- linha 1
 
-    (
-        'Back-End',        
-        80
-                        
-    ), -- linha 2
+    ('Back-End', 80 ), -- linha 2
 
-    (
-        'UX/UI Design',        
-        30
-                         
-    ), -- linha 3
+    ('UX/UI Design', 30 ), -- linha 3
 
-    (
-        'Figma',        
-        10
-                        
-    ), -- linha 4
+    ('Figma', 10 ), -- linha 4
 
-     (
-        'Redes de Computadores',        
-        100
-                       
-    ); -- linha 5
+    ('Redes de Computadores', 100 ); -- linha 5
 
 ```
 
 
 ### Cadastre pelo menos 5 professores: 
 
-1. Jon Oliva, área infra
-2. Lemmy Kilmister, área design
-3. Neil Peart, área design
-4. Ozzy Osbourne, área desenvolvimento
-5. David Gilmour, área desenvolvimento
-
-**Atenção:** durante o cadastro dos professores, associe cada professor a um curso na ordem contrária dos registros.
-
-
+<!-- Incluir No Tabela professores nome, area de atuação e curso_id -->
 ```sql
 INSERT INTO professores (
          nome, area_de_atuacao, curso_id) 
-    VALUES (
-        'Jon Oliva',        
-        'infra',
-        5                 
-    ), -- linha 1
+    VALUES
+    ('Jon Oliva', 'infra', 5 ), -- linha 1
 
-    (
-        'Lemmy Kilmister',        
-        'design',
-        4                  
-    ), -- linha 2
+    ('Lemmy Kilmister', 'design', 4 ), -- linha 2
 
-    (
-        'Neil Peart',        
-        'design',
-        3                
-    ), -- linha 3
+    ('Neil Peart', 'design', 3 ), -- linha 3
 
-    (
-        'Ozzy Osbourne',        
-        'desenvolvimento',
-        2                 
-    ), -- linha 4
+    ('Ozzy Osbourne','desenvolvimento', 2 ), -- linha 4
 
-     (
-        'David Gilmour',        
-        'desenvolvimento',
-        1                
-    ); -- linha 5
+    ('David Gilmour', 'desenvolvimento', 1 ); -- linha 5
 
 ```
+
+### Atualize os dados do campo professor_id da tabela cursos, associando cada curso ao seu professor correspondente.
+
+```sql
+UPDATE cursos SET professor_id = 5 WHERE id =  1; -- Front-End
+
+UPDATE cursos SET professor_id = 4 WHERE id =  2; -- Back-End
+
+UPDATE cursos SET professor_id = 3 WHERE id =  3; -- UX/UI Design 
+
+UPDATE cursos SET professor_id = 2 WHERE id =  4; -- Figma
+
+UPDATE cursos SET professor_id = 1 WHERE id =  5; -- Redes de Computadores
+```
+
+
+
+### Cadastre pelo menos 10 alunos distribuidos aleatoriamente dentre os cursos, com datas de nascimento variadas, notas baixas e altas (sempre entre 0.00 e 10.00).
+
+<!-- Incluir No Tabela professores nome, data_de_nascimento, primeira_nota, segunda_nota e curso_id -->
+```sql
+INSERT INTO alunos (
+         nome, data_de_nascimento, primeira_nota, segunda_nota, curso_id ) 
+    VALUES 
+    ('Harry Potter', '1989-07-22', 8.00, 8.00 , 1 ), -- linha 1 - curso Front-End 
+
+    ('Hermione Granger', '1990-04-15', 10.00, 10.00 , 2 ), -- linha 2 -  Back-End
+
+    ('Rony Weasley', '1988-08-24', 8.00, 7.00 , 3 ), -- linha 3 -  UX/UI Design
+
+    ('Gina Weasley', '1991-02-17', 9.00, 6.00 , 4 ), -- linha 4 -  Figma
+
+    ('Luna Lovegood', '1991-08-16', 10.00, 6.00 , 5 ), -- linha 5 -  Redes de Computadores
+
+    ('Draco Malfoy', '1987-09-22', 7.00, 4.00 , 1 ), -- linha 6 - curso Front-End 
+
+    ('Severo Snape', '1946-02-21', 5.00, 5.00 , 2 ), -- linha 7 -  Back-End
+
+    ('Sirius Black', '1958-03-21', 3.00, 7.00 , 3 ), -- linha 8 -  UX/UI Design
+
+    ('Neville Longbottom', '1989-06-27', 9.00, 3.00 , 4 ), -- linha 9 -  Figma
+
+    ('Rúbeo Hagrid', '1950-03-30', 4.00, 6.00 , 5 ); -- linha 10 -  Redes de Computadores
+
+
+```
+
 
 
 
