@@ -42,12 +42,19 @@ CREATE TABLE alunos(
 
 <!--  Criando a chave-estrangeira -->
 ```sql
+ALTER TABLE alunos
+    
+    ADD CONSTRAINT fk_alunos_cursos  
+    FOREIGN KEY (curso_id) REFERENCES cursos(id);
+```
+
+
+```sql
 ALTER TABLE cursos
     
     ADD CONSTRAINT fk_cursos_professores1 
     FOREIGN KEY (professore_id) REFERENCES professores(id);
 ```
-
 
 ```sql
 ALTER TABLE professores
@@ -56,12 +63,7 @@ ALTER TABLE professores
     FOREIGN KEY (curso_id) REFERENCES cursos(id);
 ```
 
-```sql
-ALTER TABLE alunos
-    
-    ADD CONSTRAINT fk_alunos_cursos  
-    FOREIGN KEY (curso_id) REFERENCES cursos(id);
-```
+
 
 
 
