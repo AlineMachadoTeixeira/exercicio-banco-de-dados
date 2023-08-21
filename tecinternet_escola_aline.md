@@ -39,7 +39,6 @@ CREATE TABLE alunos(
 ); 
 ```
 
-
 <!--  Criando a chave-estrangeira -->
 ```sql
 ALTER TABLE alunos
@@ -67,7 +66,6 @@ ALTER TABLE professores
 ### Cadastre pelo menos 5 cursos: 
 
 <!-- Incluir No Tabela cursos TITULO e Carga Horaria-->
-
 ```sql
 INSERT INTO cursos (
          titulo, carga_horaria ) 
@@ -81,9 +79,7 @@ INSERT INTO cursos (
     ('Figma', 10 ), -- linha 4
 
     ('Redes de Computadores', 100 ); -- linha 5
-
 ```
-
 
 ### Cadastre pelo menos 5 professores: 
 
@@ -146,7 +142,6 @@ INSERT INTO alunos (
     ('Neville Longbottom', '1989-06-27', 9.00, 3.00 , 4 ), -- linha 9 -  Figma
 
     ('Rúbeo Hagrid', '1950-03-30', 4.00, 6.00 , 5 ); -- linha 10 -  Redes de Computadores
-
 
 ```
 
