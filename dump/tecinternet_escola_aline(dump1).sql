@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/08/2023 às 14:42
+-- Tempo de geração: 21/08/2023 às 16:05
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -38,6 +38,22 @@ CREATE TABLE `alunos` (
   `curso_id` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `alunos`
+--
+
+INSERT INTO `alunos` (`id`, `nome`, `data_de_nascimento`, `primeira_nota`, `segunda_nota`, `curso_id`) VALUES
+(1, 'Harry Potter', '1989-07-22', 8.00, 8.00, 1),
+(2, 'Hermione Granger', '1990-04-15', 10.00, 10.00, 2),
+(3, 'Rony Weasley', '1988-08-24', 8.00, 7.00, 3),
+(4, 'Gina Weasley', '1991-02-17', 9.00, 6.00, 4),
+(5, 'Luna Lovegood', '1991-08-16', 10.00, 6.00, 5),
+(6, 'Draco Malfoy', '1987-09-22', 7.00, 4.00, 1),
+(7, 'Severo Snape', '1946-02-21', 5.00, 5.00, 2),
+(8, 'Sirius Black', '1958-03-21', 3.00, 7.00, 3),
+(9, 'Neville Longbottom', '1989-06-27', 9.00, 3.00, 4),
+(10, 'Rúbeo Hagrid', '1950-03-30', 4.00, 6.00, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -56,11 +72,11 @@ CREATE TABLE `cursos` (
 --
 
 INSERT INTO `cursos` (`id`, `titulo`, `carga_horaria`, `professor_id`) VALUES
-(1, 'Front-End', 40, NULL),
-(2, 'Back-End', 80, NULL),
-(3, 'UX/UI Design', 30, NULL),
-(4, 'Figma', 10, NULL),
-(5, 'Redes de Computadores', 100, NULL);
+(1, 'Front-End', 40, 5),
+(2, 'Back-End', 80, 4),
+(3, 'UX/UI Design', 30, 3),
+(4, 'Figma', 10, 2),
+(5, 'Redes de Computadores', 100, 1);
 
 -- --------------------------------------------------------
 
@@ -71,9 +87,20 @@ INSERT INTO `cursos` (`id`, `titulo`, `carga_horaria`, `professor_id`) VALUES
 CREATE TABLE `professores` (
   `id` tinyint(4) NOT NULL,
   `nome` varchar(50) NOT NULL,
-  `area_de_atuacao` enum('design','desenvolvimento',' infra') NOT NULL,
+  `area_de_atuacao` enum('design','desenvolvimento','infra') NOT NULL,
   `curso_id` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `professores`
+--
+
+INSERT INTO `professores` (`id`, `nome`, `area_de_atuacao`, `curso_id`) VALUES
+(1, 'Jon Oliva', 'infra', 5),
+(2, 'Lemmy Kilmister', 'design', 4),
+(3, 'Neil Peart', 'design', 3),
+(4, 'Ozzy Osbourne', 'desenvolvimento', 2),
+(5, 'David Gilmour', 'desenvolvimento', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -108,7 +135,7 @@ ALTER TABLE `professores`
 -- AUTO_INCREMENT de tabela `alunos`
 --
 ALTER TABLE `alunos`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de tabela `cursos`
@@ -120,7 +147,7 @@ ALTER TABLE `cursos`
 -- AUTO_INCREMENT de tabela `professores`
 --
 ALTER TABLE `professores`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para tabelas despejadas
