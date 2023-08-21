@@ -77,30 +77,82 @@ ALTER TABLE professores
 
 ```sql
 INSERT INTO cursos (
-         titulo, carga_horaria) 
+         titulo, carga_horaria, ) 
     VALUES (
         'Front-End',        
-        40                  
+        40
+                        
     ), -- linha 1
 
     (
         'Back-End',        
-        80                  
+        80
+                        
     ), -- linha 2
 
     (
         'UX/UI Design',        
-        30                  
+        30
+                         
     ), -- linha 3
 
     (
         'Figma',        
-        10                 
+        10
+                        
     ), -- linha 4
 
      (
         'Redes de Computadores',        
-        100                 
+        100
+                       
+    ); -- linha 5
+
+```
+
+
+### Cadastre pelo menos 5 professores: 
+
+1. Jon Oliva, área infra
+2. Lemmy Kilmister, área design
+3. Neil Peart, área design
+4. Ozzy Osbourne, área desenvolvimento
+5. David Gilmour, área desenvolvimento
+
+**Atenção:** durante o cadastro dos professores, associe cada professor a um curso na ordem contrária dos registros.
+
+
+```sql
+INSERT INTO professores (
+         nome, area_de_atuacao, curso_id) 
+    VALUES (
+        'Jon Oliva',        
+        'infra',
+        5                 
+    ), -- linha 1
+
+    (
+        'Lemmy Kilmister',        
+        'design',
+        4                  
+    ), -- linha 2
+
+    (
+        'Neil Peart',        
+        'design',
+        3                
+    ), -- linha 3
+
+    (
+        'Ozzy Osbourne',        
+        'desenvolvimento',
+        2                 
+    ), -- linha 4
+
+     (
+        'David Gilmour',        
+        'desenvolvimento',
+        1                
     ); -- linha 5
 
 ```

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21/08/2023 às 13:25
+-- Tempo de geração: 21/08/2023 às 14:42
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -50,6 +50,17 @@ CREATE TABLE `cursos` (
   `carga_horaria` tinyint(4) DEFAULT NULL,
   `professor_id` tinyint(4) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cursos`
+--
+
+INSERT INTO `cursos` (`id`, `titulo`, `carga_horaria`, `professor_id`) VALUES
+(1, 'Front-End', 40, NULL),
+(2, 'Back-End', 80, NULL),
+(3, 'UX/UI Design', 30, NULL),
+(4, 'Figma', 10, NULL),
+(5, 'Redes de Computadores', 100, NULL);
 
 -- --------------------------------------------------------
 
@@ -103,7 +114,7 @@ ALTER TABLE `alunos`
 -- AUTO_INCREMENT de tabela `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `professores`
