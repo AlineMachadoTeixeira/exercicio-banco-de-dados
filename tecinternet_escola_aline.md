@@ -1,6 +1,7 @@
 
 ![](tecinternet_escola_etapa_um.png)
 
+<!--  Crie um banco de dados chamado  -->
 ```sql
 CREATE DATABASE tecinternet_escola_aline CHARACTER SET utf8mb4;
 ```
@@ -10,7 +11,7 @@ CREATE DATABASE tecinternet_escola_aline CHARACTER SET utf8mb4;
 ```sql
 CREATE TABLE cursos(
     id TINYINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    titulo VARCHAR(50) NOT NULL
+    titulo VARCHAR(30) NOT NULL
     carga_horaria  TINYINT 
     professor_id TINYINT NULL 
 ); 
