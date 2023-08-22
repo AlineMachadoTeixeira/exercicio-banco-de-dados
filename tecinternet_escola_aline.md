@@ -2,6 +2,10 @@
 
 ![](tecinternet_escola_etapa_um.png)
 
+-------
+<br>
+
+
 <!--  Crie um banco de dados chamado  -->
 ```sql
 CREATE DATABASE tecinternet_escola_aline CHARACTER SET utf8mb4;
@@ -62,6 +66,8 @@ ALTER TABLE professores
     ADD CONSTRAINT fk_professores_cursos1   
     FOREIGN KEY (curso_id) REFERENCES cursos(id);
 ```
+-------
+<br>
 
 # Exercícios de Banco de Dados - Etapa 2
 
@@ -147,6 +153,8 @@ INSERT INTO alunos (
 
 ```
 
+-------
+<br>
 
 # Exercícios de Banco de Dados - Etapa 3
 
@@ -238,10 +246,57 @@ ORDER BY COUNT(alunos.curso_id) DESC;
 
 ### 10) Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno.
 
+```sql
+SELECT 
+alunos.nome AS 'Alunos', 
+alunos.primeira_nota AS '1º nota',
+alunos.segunda_nota AS '2º nota', 
+ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média das Notas",
+cursos.titulo AS 'Titulo' 
+FROM alunos INNER JOIN cursos 
+ON alunos.curso_id = cursos.id 
+WHERE cursos.id IN (1,2) 
+```
+![](etapa3-exercicicio10.PNG)
 
 
 
+### 11) Faça uma consulta que altere o nome do curso de Figma para Adobe XD e sua carga horária de 10 para 15.
 
+```sql
+UPDATE cursos SET titulo = 'Adobe XD' WHERE id = 4;  -- ☠️ NÃO SE ESQUEÇA DO WHERE!
+
+UPDATE cursos SET carga_horaria = 15 WHERE id = 4;  -- ☠️ NÃO SE ESQUEÇA DO WHERE!
+```
+![](etapa3-exercicicio11_1.PNG)
+![](etapa3-exercicicio11_2.PNG)
+![](etapa3-exercicicio11_3.PNG)
+
+ 
+
+ ### 12) Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
+
+```sql
+DELETE FROM alunos  WHERE id IN (8, 10);  -- ☠️ NÃO SE ESQUEÇA DO WHERE! Senão deleta tudo ☠️
+-- id 8 Sirius Black
+-- id 10 Rúbeo Hagrid
+```
+![](etapa3-exercicicio12.PNG)
+
+
+### 13) Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
+
+```sql
+SELECT alunos.nome AS 'Alunos', cursos.titulo AS 'Titulo', 
+FROM alunos 
+JOIN cursos 
+ON alunos.curso_id = cursos.id 
+ORDER BY nome; 
+```
+![](etapa3-exercicicio13.PNG)
+
+---------
+<br>
 
 
 
