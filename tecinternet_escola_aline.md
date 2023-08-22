@@ -165,6 +165,31 @@ SELECT nome AS 'ALunos',ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média d
 ```
 ![](etapa3-exercicicio2.PNG)
 
+### 3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
+
+```sql
+SELECT carga_horaria AS 'Carga Horária',ROUND(carga_horaria *0.25, 2 ) as "Limite de faltas em horas" FROM CURSOS ORDER BY carga_horaria;
+```
+![](etapa3-exercicicio3.PNG)
+
+### 4) Faça uma consulta que mostre os nomes dos professores que são somente da área "desenvolvimento".
+
+```sql
+SELECT nome AS 'Professor', area_de_atuacao AS 'Área' FROM professores WHERE area_de_atuacao LIKE '%desenvolvimento%' OR nome LIKE '%desenvolvimento%';
+```
+![](etapa3-exercicicio4.PNG)
+
+### 5) Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
+
+```sql
+```
+
+
+
+
+
+
+
 
 
 
