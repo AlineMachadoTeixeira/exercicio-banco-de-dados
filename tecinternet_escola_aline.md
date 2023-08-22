@@ -310,6 +310,26 @@ ORDER BY TIMESTAMPDIFF(YEAR, data_de_nascimento, CURDATE());
 ![](desafio1.PNG)
 
 
+#### 2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **maior ou igual a 7**.
+
+```sql
+SELECT nome AS 'ALunos',ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média das Notas" 
+FROM alunos 
+WHERE ROUND((primeira_nota + segunda_nota)/2, 2 ) >= 7   
+ORDER BY ROUND((primeira_nota + segunda_nota)/2, 2 ) ;
+```
+![](desafio2.PNG)
+
+#### 3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **menor que 7**.
+
+```sql
+SELECT nome AS 'ALunos',ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média das Notas" 
+FROM alunos 
+WHERE ROUND((primeira_nota + segunda_nota)/2, 2 ) < 7
+ORDER BY ROUND((primeira_nota + segunda_nota)/2, 2 ) ;
+
+```
+![](desafio3.PNG)
 
 
 
