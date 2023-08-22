@@ -331,9 +331,17 @@ ORDER BY ROUND((primeira_nota + segunda_nota)/2, 2 ) ;
 ```
 ![](desafio3.PNG)
 
+#### 4) Criar uma consulta que mostre a quantidade de alunos com média **maior ou igual a 7**.
+```sql
+SELECT COUNT( * ) AS "Quantidade de alunos" 
+FROM alunos 
+WHERE ROUND((primeira_nota + segunda_nota)/2, 2 ) >= 7 
+```
+![](desafio4.PNG)
 
 
 
+`
 
 
 
