@@ -278,8 +278,7 @@ UPDATE cursos SET carga_horaria = 15 WHERE id = 4;  -- ☠️ NÃO SE ESQUEÇA D
 
 ```sql
 DELETE FROM alunos  WHERE id IN (8, 10);  -- ☠️ NÃO SE ESQUEÇA DO WHERE! Senão deleta tudo ☠️
--- id 8 Sirius Black
--- id 10 Rúbeo Hagrid
+
 ```
 ![](etapa3-exercicicio12.PNG)
 
@@ -297,6 +296,18 @@ ORDER BY nome;
 
 ---------
 <br>
+
+## DESAFIOS
+
+#### 1) Criar uma consulta que calcule a idade do aluno
+```sql
+
+SELECT nome, data_de_nascimento, 
+TIMESTAMPDIFF(YEAR, data_de_nascimento, CURDATE()) AS 'IDADE ALUNOS'
+FROM alunos
+ORDER BY TIMESTAMPDIFF(YEAR, data_de_nascimento, CURDATE());  
+```
+![](desafio1.PNG)
 
 
 
