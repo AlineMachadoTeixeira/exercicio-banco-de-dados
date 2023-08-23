@@ -163,7 +163,7 @@ INSERT INTO alunos (
 ```sql
 SELECT  nome, data_de_nascimento FROM alunos WHERE data_de_nascimento < '2009-12-31';
 ```
-![](etapa3-exercicicio1.PNG)
+![](etapa3-png/etapa3-exercicicio1.PNG)
 
 
 ### 2) Faça uma consulta que calcule a média das notas de cada aluno e as mostre com duas casas decimais.
@@ -171,7 +171,7 @@ SELECT  nome, data_de_nascimento FROM alunos WHERE data_de_nascimento < '2009-12
 ```sql 
 SELECT nome AS 'ALunos',ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média das Notas" FROM alunos; 
 ```
-![](etapa3-exercicicio2.PNG)
+![](etapa3-png/etapa3-exercicicio2.PNG)
 
 ### 3) Faça uma consulta que calcule o limite de faltas de cada curso de acordo com a carga horária. Considere o limite como 25% da carga horária. Classifique em ordem crescente pelo título do curso.
 
@@ -179,7 +179,7 @@ SELECT nome AS 'ALunos',ROUND((primeira_nota + segunda_nota)/2, 2 ) as "Média d
 SELECT titulo, carga_horaria AS 'Carga Horária',ROUND(carga_horaria *0.25, 2 ) as "Limite de faltas em horas" 
 FROM CURSOS ORDER BY titulo;
 ```
-![](etapa3-exercicicio3.PNG)
+![](etapa3-png/etapa3-exercicicio3.PNG)
 
 ### 4) Faça uma consulta que mostre os nomes dos professores que são somente da área "desenvolvimento".
 
@@ -187,7 +187,7 @@ FROM CURSOS ORDER BY titulo;
 SELECT nome AS 'Professor', area_de_atuacao AS 'Área' 
 FROM professores WHERE area_de_atuacao LIKE '%desenvolvimento%'; 
 ```
-![](etapa3-exercicicio4.PNG)
+![](etapa3-png/etapa3-exercicicio4.PNG)
 
 ### 5) Faça uma consulta que mostre a quantidade de professores que cada área ("design", "infra", "desenvolvimento") possui.
 
@@ -196,7 +196,7 @@ SELECT area_de_atuacao, COUNT( * ) as "Qtd de Professores Por Cursos"
 FROM professores 
 GROUP BY area_de_atuacao; 
 ```
-![](etapa3-exercicicio5.PNG)
+![](etapa3-png/etapa3-exercicicio5.PNG)
 
 ### 6) Faça uma consulta que mostre o nome dos alunos, o título e a carga horária dos cursos que fazem.
 
@@ -206,7 +206,7 @@ FROM alunos
 INNER JOIN cursos 
 ON alunos.curso_id = cursos.id;
 ```
-![](etapa3-exercicicio6.PNG)
+![](etapa3-png/etapa3-exercicicio6.PNG)
 
 ### 7) Faça uma consulta que mostre o nome dos professores e o título do curso que lecionam. Classifique pelo nome do professor.
 
@@ -215,7 +215,7 @@ SELECT professores.nome AS 'Professor', cursos.titulo AS 'Titulo' FROM professor
 INNER JOIN cursos ON professores.curso_id = cursos.id 
 ORDER BY nome;
 ```
-![](etapa3-exercicicio7.PNG)
+![](etapa3-png/etapa3-exercicicio7.PNG)
 
 ### 8) Faça uma consulta que mostre o nome dos alunos, o título dos cursos que fazem, e o professor de cada curso.
 
@@ -227,7 +227,7 @@ ON alunos.curso_id = cursos.id
 JOIN professores 
 ON cursos.professor_id = professores.id 
 ```
-![](etapa3-exercicicio8.PNG)
+![](etapa3-png/etapa3-exercicicio8.PNG)
 
 
 ### 9) Faça uma consulta que mostre a quantidade de alunos que cada curso possui. Classifique os resultados em ordem descrecente de acordo com a quantidade de alunos.
@@ -241,7 +241,7 @@ ON alunos.curso_id = cursos.id
 GROUP BY cursos.titulo  
 ORDER BY COUNT(alunos.curso_id) DESC; 
 ```
-![](etapa3-exercicicio9.PNG)
+![](etapa3-png/etapa3-exercicicio9.PNG)
 
 
 ### 10) Faça uma consulta que mostre o nome dos alunos, suas notas, médias, e o título dos cursos que fazem. Devem ser considerados somente os alunos de Front-End e Back-End. Mostre os resultados classificados pelo nome do aluno.
@@ -257,7 +257,7 @@ FROM alunos INNER JOIN cursos
 ON alunos.curso_id = cursos.id 
 WHERE cursos.id IN (1,2) 
 ```
-![](etapa3-exercicicio10.PNG)
+![](etapa3-png/etapa3-exercicicio10.PNG)
 
 
 
@@ -268,10 +268,9 @@ UPDATE cursos SET titulo = 'Adobe XD' WHERE id = 4;  -- ☠️ NÃO SE ESQUEÇA 
 
 UPDATE cursos SET carga_horaria = 15 WHERE id = 4;  -- ☠️ NÃO SE ESQUEÇA DO WHERE!
 ```
-![](etapa3-exercicicio11_1.PNG)
-![](etapa3-exercicicio11_2.PNG)
-![](etapa3-exercicicio11_3.PNG)
-
+![](etapa3-png/etapa3-exercicicio11_1.PNG)
+![](etapa3-png/etapa3-exercicicio11_2.PNG)
+![](etapa3-png/etapa3-exercicicio11_3.PNG)
  
 
  ### 12) Faça uma consulta que exclua um aluno do curso de Redes de Computadores e um aluno do curso de UX/UI.
@@ -280,7 +279,7 @@ UPDATE cursos SET carga_horaria = 15 WHERE id = 4;  -- ☠️ NÃO SE ESQUEÇA D
 DELETE FROM alunos  WHERE id IN (8, 10);  -- ☠️ NÃO SE ESQUEÇA DO WHERE! Senão deleta tudo ☠️
 
 ```
-![](etapa3-exercicicio12.PNG)
+![](etapa3-png/etapa3-exercicicio12.PNG)
 
 
 ### 13) Faça uma consulta que mostre a lista de alunos atualizada e o título dos cursos que fazem, classificados pelo nome do aluno.
@@ -292,7 +291,7 @@ JOIN cursos
 ON alunos.curso_id = cursos.id 
 ORDER BY nome; 
 ```
-![](etapa3-exercicicio13.PNG)
+![](etapa3-png/etapa3-exercicicio13.PNG)
 
 ---------
 <br>
@@ -307,7 +306,7 @@ TIMESTAMPDIFF(YEAR, data_de_nascimento, CURDATE()) AS 'IDADE ALUNOS'
 FROM alunos
 ORDER BY TIMESTAMPDIFF(YEAR, data_de_nascimento, CURDATE());  
 ```
-![](desafio1.PNG)
+![](desafio/desafio1.PNG)
 
 
 #### 2) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **maior ou igual a 7**.
@@ -318,7 +317,7 @@ FROM alunos
 WHERE ROUND((primeira_nota + segunda_nota)/2, 2 ) >= 7   
 ORDER BY ROUND((primeira_nota + segunda_nota)/2, 2 ) ;
 ```
-![](desafio2.PNG)
+![](desafio/desafio2.PNG)
 
 #### 3) Criar uma consulta que calcule a média das notas de cada aluno e mostre somente os alunos que tiveram a média **menor que 7**.
 
@@ -329,7 +328,7 @@ WHERE ROUND((primeira_nota + segunda_nota)/2, 2 ) < 7
 ORDER BY ROUND((primeira_nota + segunda_nota)/2, 2 ) ;
 
 ```
-![](desafio3.PNG)
+![](desafio/desafio3.PNG)
 
 #### 4) Criar uma consulta que mostre a quantidade de alunos com média **maior ou igual a 7**.
 ```sql
@@ -337,7 +336,7 @@ SELECT COUNT( * ) AS "Quantidade de alunos"
 FROM alunos 
 WHERE ROUND((primeira_nota + segunda_nota)/2, 2 ) >= 7 
 ```
-![](desafio4.PNG)
+![](desafio/desafio4.PNG)
 
 
 
